@@ -22,7 +22,7 @@ DEFAULT_PLANS_DIR = DEFAULT_DATA_DIR / "plans.json"
 DEFAULT_BOT_HOST = "0.0.0.0"
 DEFAULT_BOT_PORT = 8080
 
-DEFAULT_SHOP_EMAIL = "support@3xui-shop.com"
+DEFAULT_SHOP_EMAIL = "support@remnawave-shop.com"
 DEFAULT_SHOP_CURRENCY = Currency.RUB.code
 DEFAULT_SHOP_TRIAL_ENABLED = True
 DEFAULT_SHOP_TRIAL_PERIOD = 3
@@ -43,11 +43,10 @@ DEFAULT_SHOP_PAYMENT_YOOMONEY_ENABLED = False
 DEFAULT_DB_NAME = "bot_database"
 
 DEFAULT_REDIS_DB_NAME = "0"
-DEFAULT_REDIS_HOST = "3xui-shop-redis"
+DEFAULT_REDIS_HOST = "remnawave-shop-redis"
 DEFAULT_REDIS_PORT = 6379
 
-DEFAULT_SUBSCRIPTION_PORT = 2096
-DEFAULT_SUBSCRIPTION_PATH = "/user/"
+DEFAULT_SUBSCRIPTION_URL_PATH = "/sub/"
 
 DEFAULT_LOG_LEVEL = "DEBUG"
 DEFAULT_LOG_FORMAT = "%(asctime)s | %(name)s | %(levelname)s | %(message)s"
@@ -93,12 +92,11 @@ class ShopConfig:
 
 
 @dataclass
-class XUIConfig:
+class RemnavaveConfig:
     USERNAME: str
     PASSWORD: str
-    TOKEN: str | None
-    SUBSCRIPTION_PORT: int
-    SUBSCRIPTION_PATH: str
+    API_URL: str
+    SUBSCRIPTION_URL_PATH: str
 
 
 @dataclass
@@ -162,7 +160,7 @@ class LoggingConfig:
 class Config:
     bot: BotConfig
     shop: ShopConfig
-    xui: XUIConfig
+    remnavave: RemnavaveConfig
     cryptomus: CryptomusConfig
     heleket: HeleketConfig
     yookassa: YooKassaConfig
@@ -180,9 +178,16 @@ def load_config() -> Config:
     if not bot_admins:
         logger.warning("BOT_ADMINS list is empty.")
 
-    xui_token = env.str("XUI_TOKEN", default=None)
-    if not xui_token:
-        logger.warning("XUI_TOKEN is not set.")
+    remnavave_username = env.str("REMNAWAVE_USERNAME", default=None)
+    remnavave_password = env.str("REMNAWAVE_PASSWORD", default=None)
+    remnavave_api_url = env.str("REMNAWAVE_API_URL", default=None)
+    remnavave_subscription_path = env.str(
+        "REMNAWAVE_SUBSCRIPTION_PATH",
+        default=DEFAULT_SUBSCRIPTION_URL_PATH,
+    )
+
+    if not remnavave_username or not remnavave_password or not remnavave_api_url:
+        logger.warning("REMNAWAVE_USERNAME, REMNAWAVE_PASSWORD, or REMNAWAVE_API_URL is not set.")
 
     payment_stars_enabled = env.bool(
         "SHOP_PAYMENT_STARS_ENABLED",
@@ -337,15 +342,11 @@ def load_config() -> Config:
             PAYMENT_YOOKASSA_ENABLED=payment_yookassa_enabled,
             PAYMENT_YOOMONEY_ENABLED=payment_yoomoney_enabled,
         ),
-        xui=XUIConfig(
-            USERNAME=env.str("XUI_USERNAME"),
-            PASSWORD=env.str("XUI_PASSWORD"),
-            TOKEN=xui_token,
-            SUBSCRIPTION_PORT=env.int("XUI_SUBSCRIPTION_PORT", default=DEFAULT_SUBSCRIPTION_PORT),
-            SUBSCRIPTION_PATH=env.str(
-                "XUI_SUBSCRIPTION_PATH",
-                default=DEFAULT_SUBSCRIPTION_PATH,
-            ),
+        remnavave=RemnavaveConfig(
+            USERNAME=remnavave_username,
+            PASSWORD=remnavave_password,
+            API_URL=remnavave_api_url,
+            SUBSCRIPTION_URL_PATH=remnavave_subscription_path,
         ),
         cryptomus=CryptomusConfig(
             API_KEY=env.str("CRYPTOMUS_API_KEY", default=None),

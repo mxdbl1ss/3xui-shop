@@ -1,13 +1,13 @@
 <div align="center" markdown>
 
 <p align="center">
-    <a href="https://github.com/snoups/3xui-shop/blob/main/README.md"><u><b>ENGLISH</b></u></a> •
-    <a href="https://github.com/snoups/3xui-shop/blob/main/README.ru_RU.md"><u><b>РУССКИЙ</b></u></a>
+    <a href="https://github.com/snoups/remnawave-shop/blob/main/README.md"><u><b>ENGLISH</b></u></a> •
+    <a href="https://github.com/snoups/remnawave-shop/blob/main/README.ru_RU.md"><u><b>РУССКИЙ</b></u></a>
 </p>
 
-![3xui-shop](https://github.com/user-attachments/assets/282d10db-a355-4c65-a2cf-eb0e8ec8eed1)
+![remnawave-shop](https://github.com/user-attachments/assets/282d10db-a355-4c65-a2cf-eb0e8ec8eed1)
 
-**This project is a Telegram bot for selling VPN subscriptions. It works with 3X-UI.**
+**This project is a Telegram bot for selling VPN subscriptions. It works with Remnawave.**
 
 <p align="center">
     <a href="#overview">Overview</a> •
@@ -16,36 +16,51 @@
     <a href="#support-the-project">Support the Project</a>
 </p>
 
-![GitHub License](https://img.shields.io/github/license/snoups/3xui-shop)
-![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/snoups/3xui-shop/total)
-![GitHub Release](https://img.shields.io/github/v/release/snoups/3xui-shop)
-![GitHub Issues or Pull Requests](https://img.shields.io/github/issues/snoups/3xui-shop)
+![GitHub License](https://img.shields.io/github/license/snoups/remnawave-shop)
+![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/snoups/remnawave-shop/total)
+![GitHub Release](https://img.shields.io/github/v/release/snoups/remnawave-shop)
+![GitHub Issues or Pull Requests](https://img.shields.io/github/issues/snoups/remnawave-shop)
 
 
 [![Static Badge](https://img.shields.io/badge/public_channel-white?style=social&logo=Telegram&logoColor=blue&logoSize=auto&labelColor=white&link=https%3A%2F%2Ft.me%2Fsn0ups)](https://t.me/sn0ups)
 [![Static Badge](https://img.shields.io/badge/contact_me-white?style=social&logo=Telegram&logoColor=blue&logoSize=auto&labelColor=white&link=https%3A%2F%2Ft.me%2Fsnoups)](https://t.me/snoups)
-![GitHub Repo stars](https://img.shields.io/github/stars/snoups/3xui-shop)
+![GitHub Repo stars](https://img.shields.io/github/stars/snoups/remnawave-shop)
 </div>
 
 <a id="overview"></a>
 
 ## 📝 Overview
 
-**3X-UI-SHOP** is a comprehensive solution designed to automate the sale of VPN subscriptions through Telegram.
-The bot uses the **3X-UI** panel API for client management and supports multiple payment methods, including
+**REMNAWAVE-SHOP** is a comprehensive solution designed to automate the sale of VPN subscriptions through Telegram.
+The bot uses the **Remnawave** panel API for client management and supports multiple payment methods, including
 **Cryptomus**, **Heleket**, **YooKassa**, **YooMoney**, and **Telegram Stars**.
 
-The bot enables efficient subscription sales with advanced features:
+The bot enables efficient subscription sales with advanced features powered by Remnawave's robust architecture:
 
-- **Server Manager**
-    - Add, remove, disable, and check servers in the pool
-    - Automatically distribute new clients across servers
-    - Manage servers without restarting or reconfiguring the bot
-    - ~~Replace a server with another one~~
+- **Node Manager**
+    - Automatically sync and manage nodes from Remnawave
+    - Monitor node status and health
+    - Distribute users across available nodes
+    - Advanced load balancing and traffic management
+- **Enhanced User Management**
+    - Hardware device limit control (HWID)
+    - Multiple protocol support (VLESS, Trojan, Shadowsocks)
+    - User tagging and categorization system
+    - Internal squads for advanced user grouping
+- **Advanced Traffic Management**
+    - Flexible traffic reset strategies (Daily, Weekly, Monthly)
+    - Precise traffic limit controls
+    - Lifetime traffic tracking
+    - Real-time usage monitoring
+- **Subscription System**
+    - Multiple client type support (SingBox, Clash, V2Ray, Stash)
+    - Custom configuration generation
+    - Subscription URL management
+    - Protocol-specific configurations
 - **Promocode System**
     - Create, edit, and delete promocodes
     - Promocodes for adding extra subscription time
-    - ~~Promocodes with discounts~~
+    - Tag-based promotional campaigns
 - **Notifications**
     - Send messages to a specific user or all users
     - Edit the last sent notification
@@ -63,39 +78,30 @@ The bot enables efficient subscription sales with advanced features:
 - **Flexible Payment System**
     - Change the default currency
     - Easily extendable architecture for adding new payment gateways
-    - ~~Add, edit, and delete subscription plans at any time~~
-    - ~~Change the display order of payment options~~
-- **~~User Editor~~**
-    - ~~View user information~~
-    - ~~View referral statistics~~
-    - ~~View payment history and activated promocodes~~
-    - ~~View server information~~
-    - ~~Edit user subscriptions~~
-    - ~~Block or unblock users~~
-    - ~~Quick access to a user via forwarded messages~~
-    - ~~Personal discounts for users~~
+    - Support for multiple payment providers
 
 ### ⚙️ Admin Panel
 The bot includes a user-friendly admin panel with tools for efficient management.
-Administrators do not have access to server management.
 
-- **`Server Manager`**: Add, remove, disable, and check servers in the pool
+- **`Node Manager`**: Monitor and manage Remnawave nodes
 - **`Statistics`**: View usage analytics and performance data
-- **`User Editor`**: Manage user accounts and subscriptions
+- **`User Editor`**: Manage user accounts and subscriptions with advanced features
+- **`Enhanced Features`**: Access to Remnawave's advanced capabilities
 - **`Promocode Editor`**: Create, edit, and delete promocodes
 - **`Notification Sender`**: Send custom notifications to users
 - **`Database Backup`**: Create and send database backups
 - **`Maintenance Mode`**: Disable user access during updates or fixes
 
+### 🚀 Remnawave Advanced Features
+This bot leverages Remnawave's powerful features:
 
-### 🚧 Current Tasks
-- [x] Trial period
-- [x] Referral system
-- [ ] Statistics
-- [ ] User editor
-- [ ] Plans editor
-- [ ] Flexible server pool
-- [ ] Custom promocodes
+- **Internal Squads**: Group users for different service tiers
+- **Hardware Device Limits**: Control device connections per user
+- **Traffic Strategies**: Automated traffic reset (daily/weekly/monthly)
+- **Protocol Management**: Support for VLESS, Trojan, and Shadowsocks
+- **User Tagging**: Organize users with custom tags
+- **Bulk Operations**: Mass update users by tags or criteria
+- **Enhanced Statistics**: Detailed user and traffic analytics
 
 <a id="installation-guide"></a>
 
@@ -109,8 +115,8 @@ Before starting the installation, make sure you have the installed [**Docker**](
 
 1. **Install & Upgrade:**
    ```bash
-   bash <(curl -Ls https://raw.githubusercontent.com/snoups/3xui-shop/main/scripts/install.sh) -q
-   cd 3xui-shop
+   bash <(curl -Ls https://raw.githubusercontent.com/snoups/remnawave-shop/main/scripts/install.sh) -q
+   cd remnawave-shop
    ```
 
 2. **Set up environment variables and plans:**
@@ -143,10 +149,10 @@ Before starting the installation, make sure you have the installed [**Docker**](
 | BOT_ADMINS | ⭕ | - | List of admin IDs (e.g., 123456789,987654321) |
 | BOT_DEV_ID | 🔴 | - | ID of the bot developer |
 | BOT_SUPPORT_ID | 🔴 | - | ID of the support person |
-| BOT_DOMAIN | 🔴 | - | Domain of the bot (e.g., 3xui-shop.com) |
+| BOT_DOMAIN | 🔴 | - | Domain of the bot (e.g., remnawave-shop.com) |
 | BOT_PORT | ⭕ | 8080 | Port of the bot |
 | | | |
-| SHOP_EMAIL | ⭕ | support@3xui-shop.com | Email for receipts |
+| SHOP_EMAIL | ⭕ | support@remnawave-shop.com | Email for receipts |
 | SHOP_CURRENCY | ⭕ | RUB | Currency for buttons (e.g., RUB, USD, XTR) |
 | SHOP_TRIAL_ENABLED | ⭕ | True | Enable trial subscription for new users |
 | SHOP_TRIAL_PERIOD | ⭕ | 3 | Duration of the trial subscription in days |
@@ -162,11 +168,10 @@ Before starting the installation, make sure you have the installed [**Docker**](
 | SHOP_PAYMENT_YOOKASSA_ENABLED | ⭕ | False | Enable Yookassa payment |
 | SHOP_PAYMENT_YOOMONEY_ENABLED | ⭕ | False | Enable Yoomoney payment |
 | | | |
-| XUI_USERNAME | 🔴 | - | Username for authentication in the 3X-UI panel |
-| XUI_PASSWORD | 🔴 | - | Password for authentication in the 3X-UI panel |
-| XUI_TOKEN | ⭕ | - | Token for authentication (if configured in the panel) |
-| XUI_SUBSCRIPTION_PORT | ⭕ | 2096 | Port for subscription |
-| XUI_SUBSCRIPTION_PATH | ⭕ | /user/ | Path for subscription |
+| REMNAWAVE_USERNAME | 🔴 | - | Username for authentication in the Remnawave panel |
+| REMNAWAVE_PASSWORD | 🔴 | - | Password for authentication in the Remnawave panel |
+| REMNAWAVE_API_URL | 🔴 | - | Full URL to Remnawave API (e.g., https://your-panel.com) |
+| REMNAWAVE_SUBSCRIPTION_PATH | ⭕ | /sub/ | Path for subscription URLs |
 | | | |
 | CRYPTOMUS_API_KEY | ⭕ | - | API key for Cryptomus payment |
 | CRYPTOMUS_MERCHANT_ID | ⭕ | - | Merchant ID for Cryptomus payment |
@@ -227,7 +232,7 @@ Before starting the installation, make sure you have the installed [**Docker**](
 
 1. **Webhook Setup:**
     - Visit the [HTTP Notifications](https://yookassa.ru/my/merchant/integration/http-notifications) page.
-    - Enter the bot’s domain in the notification URL, ending with `/yookassa` (e.g., `https://3xui-shop.com/yookassa`).
+    - Enter the bot's domain in the notification URL, ending with `/yookassa` (e.g., `https://remnawave-shop.com/yookassa`).
     - Select the following events:
         - `payment.succeeded`
         - `payment.waiting_for_capture`
@@ -242,7 +247,7 @@ Before starting the installation, make sure you have the installed [**Docker**](
 
 1. **Webhook Setup:**
     - Visit the [HTTP Notifications](https://yoomoney.ru/transfer/myservices/http-notification) page.
-    - Enter the bot’s domain in the notification URL, ending with `/yoomoney` (e.g., `https://3xui-shop.com/yoomoney`).
+    - Enter the bot's domain in the notification URL, ending with `/yoomoney` (e.g., `https://remnawave-shop.com/yoomoney`).
     - Copy the notification secret key.
     - Check the box for `sending HTTP-notifications`.
     - Save the changes.
@@ -252,21 +257,19 @@ Before starting the installation, make sure you have the installed [**Docker**](
         - `YOOMONEY_WALLET_ID`: Your wallet ID
         - `YOOMONEY_NOTIFICATION_SECRET`: Your notification secret key
 
-### 3X-UI Configuration
+### Remnawave Configuration
 
-To ensure the bot functions correctly, you must configure the 3X-UI panel:
+To ensure the bot functions correctly, you must configure the Remnawave panel:
 
-- [Set up SSL certificate.](https://github.com/MHSanaei/3x-ui?tab=readme-ov-file#ssl-certificate)
-- Set up an Inbound **(the first one will be used)** for adding clients.
-- Enable the subscription service with port `2096` and path `/user/`.
-    > **Don’t forget to specify certificate for the subscription.**
-- Disabling configuration encryption is recommended.
-
-<a id="bugs-and-feature-requests"></a>
+- [Set up your Remnawave panel](https://github.com/remnawave/remnawave) following their installation guide.
+- Ensure the API is accessible and you have admin credentials.
+- Create at least one node in your Remnawave panel.
+- The bot will automatically sync nodes and manage users through the Remnawave API.
+- Configure subscription settings in Remnawave for optimal performance.
 
 ### Referral and Trial Rewards Configuration
 
-Bot now supports **trial subscriptions** and a **two-level referral reward system**. Here’s how it works:
+Bot now supports **trial subscriptions** and a **two-level referral reward system**. Here's how it works:
 All configuration is available via `.env` [(see it above)](#environment-variables-configuration).
 
 | Type of reward | How it works |
@@ -274,6 +277,8 @@ All configuration is available via `.env` [(see it above)](#environment-variable
 | Trial period | A trial subscription is available by 'TRY FOR FREE' button at start menu to any user who opens the bot and does not have an active subscription. |
 | Extended Trial period | This option is just like previous 'trial period', but allows to configure **extended trial period** for an invited user. |
 | Two-Level Referral Payment Rewards | When a referred user pays for a subscription, the referrer and the second-level referrer (the user who invited the referrer) receive fixed count of days at the moment fore each level. |
+
+<a id="bugs-and-feature-requests"></a>
 
 ## 🐛 Bugs and Feature Requests
 
@@ -291,7 +296,7 @@ A special thanks to the following individuals for their generous support:
 - **Aleksey**
 - [**@DmitryKryloff**](https://t.me/DmitryKryloff)
 
-You can support me via the following methods ([or RUB](https://t.me/shop_3xui/2/1580)):
+You can support me via the following methods ([or RUB](https://t.me/shop_remnawave/2/1580)):
 
 - **Bitcoin:** `bc1ql53lcaukdv3thxcheh3cmgucwlwkr929gar0cy`
 - **Ethereum:** `0xe604a10258d26c085ada79cdea9a84a5b0894b91`
